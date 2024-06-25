@@ -8,7 +8,7 @@ const TodoList = () => {
     const [todo, setTodo] = useState('');
     const [todos, setTodos] = useState([]);
     function create() {
-        axios.post('http://localhost:5000/posting', { todo })
+        axios.post('http://localhost:10000/posting', { todo })
             .then(() => {
                 alert('Data has been posted successfully');
                 setTodo('');
@@ -19,7 +19,7 @@ const TodoList = () => {
     }
 
     function getData() {
-        axios.get('http://localhost:5000/getting')
+        axios.get('http://localhost:10000/getting')
             .then((response) => {
                 setTodos(response.data);
             })
@@ -30,7 +30,7 @@ const TodoList = () => {
 
 
     const updatedTodo = (id, updatedData) => {
-        axios.put(`http://localhost:5000/updating/${id}`, { todo: updatedData })
+        axios.put(`http://localhost:10000/updating/${id}`, { todo: updatedData })
             .then(() => {
                 console.log('Todo updated successfully');
                 // Optionally, you can perform additional actions after update
@@ -55,7 +55,7 @@ const TodoList = () => {
     };
 
     function deleteTodo(id) {
-        axios.delete(`http://localhost:5000/deleting/${id}`)
+        axios.delete(`http://localhost:10000/deleting/${id}`)
             .then(() => {
                 getData();
             })
@@ -65,7 +65,7 @@ const TodoList = () => {
     }
     return (
         <div>
-         
+            <h1>updated version</h1>
             <div style={{ display: 'flex', marginBottom: '10px', marginTop:"50px" }}>
                 <TextField id="todo" label="Todo" variant="outlined" value={todo} onChange={(e) => setTodo(e.target.value)} />
 
