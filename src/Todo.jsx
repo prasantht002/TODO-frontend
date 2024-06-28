@@ -65,7 +65,7 @@ const TodoList = () => {
     }
     return (
         <div>
-            <h1>updated version</h1>
+            <h1>updated version  2.0</h1>
             <div style={{ display: 'flex', marginBottom: '10px', marginTop:"50px" }}>
                 <TextField id="todo" label="Todo" variant="outlined" value={todo} onChange={(e) => setTodo(e.target.value)} />
 
