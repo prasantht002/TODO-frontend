@@ -8,7 +8,7 @@ const TodoList = () => {
     const [todo, setTodo] = useState('');
     const [todos, setTodos] = useState([]);
     function create() {
-        axios.post('http://localhost:10000/posting', { todo })
+        axios.post('https://todo-backend-yf0j.onrender.com/posting', { todo })
             .then(() => {
                 alert('Data has been posted successfully');
                 setTodo('');
@@ -19,7 +19,7 @@ const TodoList = () => {
     }
 
     function getData() {
-        axios.get('http://localhost:10000/getting')
+        axios.get('https://todo-backend-yf0j.onrender.com/getting')
             .then((response) => {
                 setTodos(response.data);
             })
@@ -30,7 +30,7 @@ const TodoList = () => {
 
 
     const updatedTodo = (id, updatedData) => {
-        axios.put(`http://localhost:10000/updating/${id}`, { todo: updatedData })
+        axios.put(`https://todo-backend-yf0j.onrender.com/${id}`, { todo: updatedData })
             .then(() => {
                 console.log('Todo updated successfully');
                 // Optionally, you can perform additional actions after update
@@ -55,7 +55,7 @@ const TodoList = () => {
     };
 
     function deleteTodo(id) {
-        axios.delete(`http://localhost:10000/deleting/${id}`)
+        axios.delete(`https://todo-backend-yf0j.onrender.com/${id}`)
             .then(() => {
                 getData();
             })
